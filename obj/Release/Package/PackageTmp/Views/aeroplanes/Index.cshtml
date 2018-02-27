@@ -1,0 +1,39 @@
+﻿@model IEnumerable<assignment.Models.aeroplane>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+
+        #back {
+            background-image: url("http://www.hdnicewallpapers.com/Walls/Big/Airplanes/Eurofighter_Typhoon_Twin_Engine_Canard_Delta_Wing_Fighter_Plane.jpg");
+        }
+    </style>
+</head>
+
+<div id="back">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
